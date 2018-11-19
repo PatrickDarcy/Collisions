@@ -4,7 +4,7 @@
 #include <iostream>
 #include <typeinfo>
 
-#include <Input.h>
+#include <AABB.h>
 #include <PlayerFSM.h>
 #include <Debug.h>
 
@@ -15,18 +15,19 @@ public:
 
 	virtual void update() {}
 
-	virtual void idle(PlayerFSM* a)
+	virtual void AABB(PlayerFSM* a)
 	{
-		DEBUG_MSG("State::Idling");
+		DEBUG_MSG("Player is a box");
 	}
-	virtual void jumping(PlayerFSM* a)
+	virtual void polyon(PlayerFSM* a)
 	{
-		DEBUG_MSG("State::Jumping");
+		DEBUG_MSG("Player is a polygon");
 	}
-	virtual void climbing(PlayerFSM* a)
+	virtual void circle(PlayerFSM* a)
 	{
-		DEBUG_MSG("State::Climbing");
+		DEBUG_MSG("Player is a circle");
 	}
+	virtual void 
 };
 
 #endif // ! ANIMATION_H

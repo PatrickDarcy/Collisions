@@ -1,15 +1,13 @@
-#ifndef JUMPING_H
-#define JUMPING_H
+#ifndef POLYGON_H
+#define POLYGON_H
 
 #include <State.h>
 
-class Jumping : public State
+class Polygon : public State
 {
 public:
-	Jumping() {};
-	~Jumping() {};
-	void idle(PlayerFSM* a);
-	void climbing(PlayerFSM* a);
+	Polygon();
+	~Polygon();
 };
 
-#endif // !IDLE_H
+#endif // !POLYGON_H

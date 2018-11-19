@@ -1,17 +1,13 @@
-#ifndef IDLE_H
-#define IDLE_H
+#ifndef AABB_H
+#define AABB_H
 
 #include <State.h>
 
-class Idle : public State
+class AABB : public State
 {
 public:
-	Idle() {};
-	~Idle() {};
-	void handleInput();
-	void update();
-	void jumping(PlayerFSM* a);
-	void climbing(PlayerFSM* a);
+	AABB();
+	~AABB();
 };
 
-#endif // !IDLE_H
+#endif // !AABB_H

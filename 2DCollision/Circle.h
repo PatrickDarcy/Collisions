@@ -1,15 +1,13 @@
-#ifndef CLIMBING_H
-#define CLIMBING_H
+#ifndef CIRCLE_H
+#define CIRCLE_H
 
 #include <State.h>
 
-class Climbing : public State
+class Circle : public State
 {
 public:
-	Climbing() {};
-	~Climbing() {};
-	void idle(PlayerFSM* a);
-	void jumping(PlayerFSM* a);
+	Circle();
+	~Circle();
 };
 
-#endif // !IDLE_H
+#endif // !CIRCLE_H

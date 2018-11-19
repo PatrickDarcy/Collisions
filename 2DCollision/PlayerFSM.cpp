@@ -1,9 +1,8 @@
 #include <PlayerFSM.h>
-#include <Idle.h>
+#include <AABB>
 
 PlayerFSM::PlayerFSM()
 {
-	m_current = new Idle();
 }
 
 PlayerFSM::~PlayerFSM() {}
@@ -28,17 +27,23 @@ State* PlayerFSM::getPrevious()
 	return m_previous;
 }
 
-void PlayerFSM::idle()
+void PlayerFSM::AABB()
 {
-	m_current->idle(this);
+	m_current
 }
 
-void PlayerFSM::jumping()
+void PlayerFSM::Circle()
 {
-	m_current->jumping(this);
 }
 
-void PlayerFSM::climbing()
+void PlayerFSM::Capsule()
 {
-	m_current->climbing(this);
+}
+
+void PlayerFSM::Ray()
+{
+}
+
+void PlayerFSM::Polygon()
+{
 }

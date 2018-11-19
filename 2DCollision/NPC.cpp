@@ -1,18 +1,18 @@
 #include <iostream>
 #include <NPC.h>
-#include <Idle.h>
+#include <AABB.h>
 #include <Debug.h>
 
 NPC::NPC() : GameObject()
 {
-	m_player_fsm.setCurrent(new Idle());
-	m_player_fsm.setPrevious(new Idle());
+	m_player_fsm.setCurrent(new AABB());
+	m_player_fsm.setPrevious(new AABB());
 }
 
 NPC::NPC(const AnimatedSprite& s) : GameObject(s)
 {
-	m_player_fsm.setCurrent(new Idle());
-	m_player_fsm.setPrevious(new Idle());
+	m_player_fsm.setCurrent(new AABB());
+	m_player_fsm.setPrevious(new AABB());
 }
 
 NPC::~NPC()
@@ -34,11 +34,11 @@ void NPC::handleInput(Input in)
 	{
 	case Input::Action::IDLE:
 		//std::cout << "Player Idling" << std::endl;
-		m_player_fsm.idle();
+		m_player_fsm.AABB();
 		break;
 	case Input::Action::UP:
 		//std::cout << "Player Up" << std::endl;
-		m_player_fsm.climbing();
+		m_player_fsm.();
 		break;
 	case Input::Action::LEFT:
 		//std::cout << "Player Left" << std::endl;

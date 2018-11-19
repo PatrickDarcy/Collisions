@@ -4,10 +4,6 @@
 class PlayerFSM
 {
 
-	// Please review very good article on Stackoverflow
-	// which covers some solutions to circular dependacies
-	// https://stackoverflow.com/questions/625799/resolve-build-errors-due-to-circular-dependency-amongst-classes
-
 private:
 	class State* m_current; // note order of m_current is 
 							// prior to setCurrent
@@ -19,11 +15,12 @@ public:
 	void setPrevious(State* s);
 	State* getCurrent();
 	State* getPrevious();
-	
-	void idle();
-	void jumping();
-	void climbing();
 
+	void AABB();
+	void Circle();
+	void Capsule();
+	void Ray();
+	void Polygon();
 // Try uncommenting and comment the declaration above
 //private:
 //	class State* m_current;

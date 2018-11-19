@@ -36,15 +36,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
+    <ClCompile Include="Capsule.cpp" />
     <ClCompile Include="PlayerFSM.cpp" />
-    <ClCompile Include="Climbing.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Idle.cpp" />
+    <ClCompile Include="AABB.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Jumping.cpp" />
+    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Ray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
