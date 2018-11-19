@@ -89,7 +89,7 @@ int main()
 
 		if (move_to.x < 0) {
 			direction.x *= -1;
-			move_to.x = 0 + npc.getAnimatedSprite().getGlobalBounds().width;
+			move_to.x = 0;
 		}
 		else if (move_to.x + npc.getAnimatedSprite().getGlobalBounds().width >= 800) { 
 			direction.x *= -1;
@@ -97,7 +97,7 @@ int main()
 		}
 		else if (move_to.y < 0) { 
 			direction.y *= -1;
-			move_to.y = 0 + npc.getAnimatedSprite().getGlobalBounds().height;
+			move_to.y = 0;
 		}
 		else if (move_to.y + npc.getAnimatedSprite().getGlobalBounds().height >= 600) {
 			direction.y *= -1;

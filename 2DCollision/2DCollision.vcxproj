@@ -20,15 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
+    <ClInclude Include="Capsule.h" />
     <ClInclude Include="PlayerFSM.h" />
-    <ClInclude Include="Climbing.h" />
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Ray.h" />
     <ClInclude Include="tinyc2.h" />
-    <ClInclude Include="Idle.h" />
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="Jumping.h" />
+    <ClInclude Include="Polygon.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
