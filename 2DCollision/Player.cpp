@@ -1,18 +1,20 @@
 #include <iostream>
 #include <Player.h>
-#include <Idle.h>
+#include <AABB.h>
+#include <Ray.h>
+#include <Circle.h>
 #include <Debug.h>
 
 Player::Player() : GameObject()
 {
-	m_player_fsm.setCurrent(new Idle());
-	m_player_fsm.setPrevious(new Idle());
+	m_player_fsm.setCurrent(new AABB());
+	m_player_fsm.setPrevious(new AABB());
 }
 
 Player::Player(const AnimatedSprite& s) : GameObject(s)
 {
-	m_player_fsm.setCurrent(new Idle());
-	m_player_fsm.setPrevious(new Idle());
+	m_player_fsm.setCurrent(new AABB());
+	m_player_fsm.setPrevious(new AABB());
 }
 
 Player::~Player()
@@ -30,23 +32,19 @@ void Player::handleInput(Input in)
 {
 	DEBUG_MSG("Handle Input");
 
-	switch (in.getCurrent())
+	switch (in.getPlayerCurrent())
 	{
-	case Input::Action::IDLE:
+	case Input::PlayerInput::P_AABB:
 		//std::cout << "Player Idling" << std::endl;
-		m_player_fsm.idle();
+		m_player_fsm.AABB();
 		break;
-	case Input::Action::UP:
+	case Input::PlayerInput::P_CIRCLE:
 		//std::cout << "Player Up" << std::endl;
-		m_player_fsm.climbing();
+		m_player_fsm.Circle();
 		break;
-	case Input::Action::LEFT:
+	case Input::PlayerInput::P_RAY:
 		//std::cout << "Player Left" << std::endl;
-		m_player_fsm.jumping();
-		break;
-	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
-		m_player_fsm.jumping();
+		m_player_fsm.Ray();
 		break;
 	default:
 		break;

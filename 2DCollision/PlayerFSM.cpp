@@ -1,5 +1,5 @@
 #include <PlayerFSM.h>
-#include <AABB>
+#include <AABB.h>
 
 PlayerFSM::PlayerFSM()
 {
@@ -29,7 +29,6 @@ State* PlayerFSM::getPrevious()
 
 void PlayerFSM::AABB()
 {
-	m_current = State::AABB
 }
 
 void PlayerFSM::Circle()

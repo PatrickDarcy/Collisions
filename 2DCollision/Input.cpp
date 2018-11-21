@@ -2,14 +2,27 @@
 
 Input::Input() 
 {
-	m_current = IDLE;
+	m_currentPlayer = PlayerInput::P_AABB;
+	m_currentNPC = NPCInput::N_AABB;
 }
 Input::~Input() {}
 
-void Input::setCurrent(Action a) {
-	m_current = a;
+void Input::setPCurrent(PlayerInput s)
+{
+	m_currentPlayer = s;
 }
 
-Input::Action Input::getCurrent() {
-	return m_current;
+void Input::setNCurrent(NPCInput s)
+{
+	m_currentNPC = s;
+}
+
+Input::NPCInput Input::getNPCCurrent()
+{
+	return m_currentNPC;
+}
+
+Input::PlayerInput Input::getPlayerCurrent() 
+{
+	return m_currentPlayer;
 }

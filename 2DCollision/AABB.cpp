@@ -6,7 +6,6 @@
 
 AABB::AABB()
 {
-
 }
 
 AABB::~AABB()

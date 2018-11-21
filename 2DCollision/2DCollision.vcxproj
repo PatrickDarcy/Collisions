@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
     <ClInclude Include="Capsule.h" />
+    <ClInclude Include="NPCFSM.h" />
     <ClInclude Include="PlayerFSM.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Debug.h" />
@@ -37,6 +38,7 @@
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Capsule.cpp" />
+    <ClCompile Include="NPCFSM.cpp" />
     <ClCompile Include="PlayerFSM.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="GameObject.cpp" />

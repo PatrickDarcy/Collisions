@@ -70,7 +70,8 @@ int main()
 
 	c2Circle circle_player;
 	circle_player.p = c2V(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
-	circle_player.r = (player.getAnimatedSprite().getGlobalBounds().width / 6);
+	circle_player.r = player.getAnimatedSprite().getGlobalBounds().width / 2;
+
 	// Initialize Input
 	Input input;
 
@@ -144,21 +145,21 @@ int main()
 				window.close();
 				break;
 			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
 				{
-					input.setCurrent(Input::Action::LEFT);
+					input.setPCurrent(Input::PlayerInput::P_AABB);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
 				{
-					input.setCurrent(Input::Action::RIGHT);
+					input.setPCurrent(Input::PlayerInput::P_CIRCLE);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
 				{
-					input.setCurrent(Input::Action::UP);
+					input.setPCurrent(Input::PlayerInput::P_RAY);
 				}
 				break;
 			default:
-				input.setCurrent(Input::Action::IDLE);
+				input.setPCurrent(Input::PlayerInput::P_AABB);
 				break;
 			}
 		}

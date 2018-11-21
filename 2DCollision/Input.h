@@ -6,18 +6,30 @@ public:
 	Input();
 	~Input();
 
-	enum Action
+	enum PlayerInput
 	{
-		IDLE,
-		UP,
-		LEFT,
-		RIGHT
+		P_AABB,
+		P_CIRCLE,
+		P_RAY
 	};
 
-	void setCurrent(Action);
-	Action getCurrent();
+	enum NPCInput
+	{
+		N_AABB,
+		N_CIRCLE,
+		N_RAY,
+		N_CAPSULE,
+		N_POLYGON,
+	};
+
+	void setPCurrent(PlayerInput s);
+	void setNCurrent(NPCInput s);
+
+	NPCInput getNPCCurrent();
+	PlayerInput getPlayerCurrent();
 
 private:
-	Action m_current;
+	PlayerInput m_currentPlayer;
+	NPCInput m_currentNPC;
 };
 #endif

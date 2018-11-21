@@ -5,14 +5,14 @@
 
 NPC::NPC() : GameObject()
 {
-	m_player_fsm.setCurrent(new AABB());
-	m_player_fsm.setPrevious(new AABB());
+	m_npc_fsm.setCurrent(new AABB());
+	m_npc_fsm.setPrevious(new AABB());
 }
 
 NPC::NPC(const AnimatedSprite& s) : GameObject(s)
 {
-	m_player_fsm.setCurrent(new AABB());
-	m_player_fsm.setPrevious(new AABB());
+	m_npc_fsm.setCurrent(new AABB());
+	m_npc_fsm.setPrevious(new AABB());
 }
 
 NPC::~NPC()
@@ -30,23 +30,27 @@ void NPC::handleInput(Input in)
 {
 	DEBUG_MSG("Handle Input");
 
-	switch (in.getCurrent())
+	switch (in.getNPCCurrent())
 	{
-	case Input::Action::IDLE:
-		//std::cout << "Player Idling" << std::endl;
-		m_player_fsm.AABB();
+	case Input::NPCInput::N_AABB:
+		//std::cout << "NPC is a Square" << std::endl;
+		m_npc_fsm.AABB();
 		break;
-	case Input::Action::UP:
-		//std::cout << "Player Up" << std::endl;
-		m_player_fsm.();
+	case Input::NPCInput::N_CAPSULE:
+		//std::cout << "NPC is a Capsule" << std::endl;
+		m_npc_fsm.Capsule();
 		break;
-	case Input::Action::LEFT:
-		//std::cout << "Player Left" << std::endl;
-		m_player_fsm.jumping();
+	case Input::NPCInput::N_CIRCLE:
+		//std::cout << "NPC is a circle" << std::endl;
+		m_npc_fsm.Circle();
 		break;
-	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
-		m_player_fsm.jumping();
+	case Input::NPCInput::N_POLYGON:
+		//std::cout << "NPC is a Polygon" << std::endl;
+		m_npc_fsm.Polygon();
+		break;
+	case Input::NPCInput::N_RAY:
+		//std::cout << "NPC is a ray" << std::endl;
+		m_npc_fsm.Ray();
 		break;
 	default:
 		break;

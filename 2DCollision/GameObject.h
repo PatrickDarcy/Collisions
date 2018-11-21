@@ -3,12 +3,14 @@
 
 #include <Input.h>
 #include <PlayerFSM.h>
+#include <NPCFSM.h>
 #include <AnimatedSprite.h>
 
 class GameObject
 {
 protected:
 	PlayerFSM m_player_fsm;
+	NPCFSM m_npc_fsm;
 	AnimatedSprite m_animated_sprite;
 	GameObject();
 	GameObject(const AnimatedSprite&);
