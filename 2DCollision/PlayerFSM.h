@@ -18,9 +18,7 @@ public:
 
 	void AABB();
 	void Circle();
-	void Capsule();
 	void Ray();
-	void Polygon();
 // Try uncommenting and comment the declaration above
 //private:
 //	class State* m_current;

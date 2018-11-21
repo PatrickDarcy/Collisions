@@ -15,19 +15,19 @@ public:
 
 	virtual void update() {}
 
-	virtual void AABB(PlayerFSM* a)
+	virtual void aabb(PlayerFSM* a)
 	{
 		DEBUG_MSG("Player is a box");
-	}
-	virtual void polyon(PlayerFSM* a)
-	{
-		DEBUG_MSG("Player is a polygon");
 	}
 	virtual void circle(PlayerFSM* a)
 	{
 		DEBUG_MSG("Player is a circle");
 	}
-	virtual void 
+	virtual void ray(PlayerFSM* a)
+	{
+		DEBUG_MSG("Player is a ray");
+	}
+
 };
 
 #endif // ! ANIMATION_H

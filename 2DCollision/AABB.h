@@ -8,6 +8,10 @@ class AABB : public State
 public:
 	AABB();
 	~AABB();
+
+	void (PlayerFSM* a);
+
+private:
 };
 
 #endif // !AABB_H

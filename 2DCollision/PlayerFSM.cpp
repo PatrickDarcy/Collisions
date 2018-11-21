@@ -29,14 +29,10 @@ State* PlayerFSM::getPrevious()
 
 void PlayerFSM::AABB()
 {
-	m_current
+	m_current = State::AABB
 }
 
 void PlayerFSM::Circle()
-{
-}
-
-void PlayerFSM::Capsule()
 {
 }
 
@@ -44,6 +40,3 @@ void PlayerFSM::Ray()
 {
 }
 
-void PlayerFSM::Polygon()
-{
-}

@@ -68,7 +68,9 @@ int main()
 	aabb_player.min = c2V(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
 	aabb_player.max = c2V(player.getAnimatedSprite().getGlobalBounds().width / 6, player.getAnimatedSprite().getGlobalBounds().width / 6);
 
-
+	c2Circle circle_player;
+	circle_player.p = c2V(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
+	circle_player.r = (player.getAnimatedSprite().getGlobalBounds().width / 6);
 	// Initialize Input
 	Input input;
 
