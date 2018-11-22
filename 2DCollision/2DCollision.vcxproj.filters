@@ -25,9 +25,6 @@
     <Filter Include="Header Files\Animation">
       <UniqueIdentifier>{ebb8056c-bc70-4d54-8a5a-088244a96385}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Input">
-      <UniqueIdentifier>{48e64629-dccb-464a-9094-bbe70e4d02c8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Animation">
       <UniqueIdentifier>{3b40ad70-16e4-458f-9443-a3f326ffb9e6}</UniqueIdentifier>
     </Filter>
@@ -45,6 +42,9 @@
     </Filter>
     <Filter Include="Header Files\Collision">
       <UniqueIdentifier>{c8ab608c-0471-44ea-baa7-5f46d9db0a7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Input">
+      <UniqueIdentifier>{48e64629-dccb-464a-9094-bbe70e4d02c8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -87,11 +87,11 @@
     <ClInclude Include="Ray.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
     <ClInclude Include="NPCFSM.h">
       <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +99,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
-      <Filter>Source Files\Input</Filter>
+      <Filter>Source Files\GameObject\Input</Filter>
     </ClCompile>
     <ClCompile Include="AnimatedSprite.cpp">
       <Filter>Source Files\Animation</Filter>

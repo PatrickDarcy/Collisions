@@ -36,15 +36,15 @@ void Player::handleInput(Input in)
 	{
 	case Input::PlayerInput::P_AABB:
 		//std::cout << "Player Idling" << std::endl;
-		m_player_fsm.AABB();
+		m_player_fsm.AABBPlayer();
 		break;
 	case Input::PlayerInput::P_CIRCLE:
 		//std::cout << "Player Up" << std::endl;
-		m_player_fsm.Circle();
+		m_player_fsm.CirclePlayer();
 		break;
 	case Input::PlayerInput::P_RAY:
 		//std::cout << "Player Left" << std::endl;
-		m_player_fsm.Ray();
+		m_player_fsm.RayPlayer();
 		break;
 	default:
 		break;

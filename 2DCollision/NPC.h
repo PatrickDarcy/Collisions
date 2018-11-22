@@ -3,7 +3,7 @@
 
 #include <GameObject.h>
 #include <Input.h>
-#include <PlayerFSM.h>
+#include <NPCFSM.h>
 #include <AnimatedSprite.h>
 
 class NPC : public GameObject

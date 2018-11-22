@@ -9,33 +9,36 @@ PlayerFSM::~PlayerFSM() {}
 
 void PlayerFSM::setCurrent(State* s)
 {
-	m_current = s;
+	m_currentPlayer = s;
 }
 
 State* PlayerFSM::getCurrent()
 {
-	return m_current;
+	return m_currentPlayer;
 }
 
 void PlayerFSM::setPrevious(State* s)
 {
-	m_previous = s;
+	m_previousPlayer = s;
 }
 
 State* PlayerFSM::getPrevious()
 {
-	return m_previous;
+	return m_previousPlayer;
 }
 
-void PlayerFSM::AABB()
+void PlayerFSM::AABBPlayer()
 {
+	m_currentPlayer->aabbPlayer(this);
 }
 
-void PlayerFSM::Circle()
+void PlayerFSM::CirclePlayer()
 {
+	m_currentPlayer->circlePlayer(this);
 }
 
-void PlayerFSM::Ray()
+void PlayerFSM::RayPlayer()
 {
+	m_currentPlayer->rayPlayer(this);
 }
 

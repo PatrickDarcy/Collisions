@@ -5,9 +5,9 @@ class NPCFSM
 {
 
 private:
-	class State* m_current; // note order of m_current is 
-							// prior to setCurrent
-	class State* m_previous;
+	class State* m_currentNPC; // note order of m_current is 
+							   // prior to setCurrent
+	class State* m_previousNPC;
 public:
 	NPCFSM();
 	~NPCFSM();
@@ -16,11 +16,11 @@ public:
 	State* getCurrent();
 	State* getPrevious();
 
-	void AABB();
-	void Circle();
-	void Ray();
-	void Capsule();
-	void Polygon();
+	void AABBNPC();
+	void CircleNPC();
+	void RayNPC();
+	void CapsuleNPC();
+	void PolygonNPC();
 	// Try uncommenting and comment the declaration above
 	//private:
 	//	class State* m_current;

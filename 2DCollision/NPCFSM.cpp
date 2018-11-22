@@ -10,38 +10,41 @@ NPCFSM::~NPCFSM()
 
 void NPCFSM::setCurrent(State * s)
 {
+	m_currentNPC = s;
 }
 
 void NPCFSM::setPrevious(State * s)
 {
+	m_previousNPC = s;
 }
 
 State * NPCFSM::getCurrent()
 {
-	return nullptr;
+	return m_currentNPC;
 }
 
 State * NPCFSM::getPrevious()
 {
-	return nullptr;
+	return m_previousNPC;
 }
 
-void NPCFSM::AABB()
+void NPCFSM::AABBNPC()
+{
+	m_currentNPC->circlePlayer(this);
+}
+
+void NPCFSM::CircleNPC()
 {
 }
 
-void NPCFSM::Circle()
+void NPCFSM::RayNPC()
 {
 }
 
-void NPCFSM::Ray()
+void NPCFSM::CapsuleNPC()
 {
 }
 
-void NPCFSM::Capsule()
-{
-}
-
-void NPCFSM::Polygon()
+void NPCFSM::PolygonNPC()
 {
 }

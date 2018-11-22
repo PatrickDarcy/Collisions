@@ -45,8 +45,8 @@ int main()
 	player_animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
 	player_animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
 	player_animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	player_animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
-	player_animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
+	/*player_animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
+	player_animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));*/
 
 	// Setup the NPC
 	GameObject &npc = NPC(npc_animated_sprite);
@@ -157,6 +157,26 @@ int main()
 				{
 					input.setPCurrent(Input::PlayerInput::P_RAY);
 				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))
+				{
+					input.setNCurrent(Input::NPCInput::N_AABB);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
+				{
+					input.setNCurrent(Input::NPCInput::N_CIRCLE);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))
+				{
+					input.setNCurrent(Input::NPCInput::N_RAY);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))
+				{
+					input.setNCurrent(Input::NPCInput::N_POLYGON);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))
+				{
+					input.setNCurrent(Input::NPCInput::N_AABB);
+				}
 				break;
 			default:
 				input.setPCurrent(Input::PlayerInput::P_AABB);
@@ -166,6 +186,7 @@ int main()
 
 		// Handle input to Player
 		player.handleInput(input);
+		npc.handleInput(input);
 
 		// Update the Player
 		player.update();

@@ -5,9 +5,9 @@ class PlayerFSM
 {
 
 private:
-	class State* m_current; // note order of m_current is 
+	class State* m_currentPlayer; // note order of m_current is 
 							// prior to setCurrent
-	class State* m_previous;
+	class State* m_previousPlayer;
 public:
 	PlayerFSM();
 	~PlayerFSM();
@@ -16,9 +16,9 @@ public:
 	State* getCurrent();
 	State* getPrevious();
 
-	void AABB();
-	void Circle();
-	void Ray();
+	void AABBPlayer();
+	void CirclePlayer();
+	void RayPlayer();
 // Try uncommenting and comment the declaration above
 //private:
 //	class State* m_current;

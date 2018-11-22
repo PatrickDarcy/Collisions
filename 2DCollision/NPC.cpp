@@ -2,6 +2,10 @@
 #include <NPC.h>
 #include <AABB.h>
 #include <Debug.h>
+#include <Circle.h>
+#include <Ray.h>
+#include <Capsule.h>
+#include <Polygon.h>
 
 NPC::NPC() : GameObject()
 {
@@ -34,23 +38,23 @@ void NPC::handleInput(Input in)
 	{
 	case Input::NPCInput::N_AABB:
 		//std::cout << "NPC is a Square" << std::endl;
-		m_npc_fsm.AABB();
+		m_npc_fsm.AABBNPC();
 		break;
 	case Input::NPCInput::N_CAPSULE:
 		//std::cout << "NPC is a Capsule" << std::endl;
-		m_npc_fsm.Capsule();
+		m_npc_fsm.CapsuleNPC();
 		break;
 	case Input::NPCInput::N_CIRCLE:
 		//std::cout << "NPC is a circle" << std::endl;
-		m_npc_fsm.Circle();
+		m_npc_fsm.CircleNPC();
 		break;
 	case Input::NPCInput::N_POLYGON:
 		//std::cout << "NPC is a Polygon" << std::endl;
-		m_npc_fsm.Polygon();
+		m_npc_fsm.PolygonNPC();
 		break;
 	case Input::NPCInput::N_RAY:
 		//std::cout << "NPC is a ray" << std::endl;
-		m_npc_fsm.Ray();
+		m_npc_fsm.RayNPC();
 		break;
 	default:
 		break;
