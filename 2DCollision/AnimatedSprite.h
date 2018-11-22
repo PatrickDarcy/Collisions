@@ -16,17 +16,15 @@ public:
 	AnimatedSprite(const Texture&, const IntRect&);
 	~AnimatedSprite();
 
-	const Clock& getClock();
-	const Time& getTime();
 	const vector<IntRect>& getFrames();
 	const IntRect& getFrame(int);
 	void addFrame(IntRect&);
 	const int getCurrentFrame();
+	void setShape(int a);
 	void update();
 	
 private:
-	Clock m_clock;
-	Time m_time;
+
 	vector<IntRect> m_frames;
 	unsigned int m_current_frame;
 };

@@ -25,7 +25,7 @@ int main()
 
 	// Load a mouse texture to display
 	sf::Texture player_texture;
-	if (!player_texture.loadFromFile("assets\\player.png")) {
+	if (!player_texture.loadFromFile("assets\\grid.png")) {
 		DEBUG_MSG("Failed to load file");
 		return EXIT_FAILURE;
 	}
@@ -33,20 +33,17 @@ int main()
 	// Setup NPC's Default Animated Sprite
 	AnimatedSprite npc_animated_sprite(npc_texture);
 	npc_animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
-	npc_animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
-	npc_animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
-	npc_animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	npc_animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
-	npc_animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));
+	npc_animated_sprite.addFrame(sf::IntRect(3, 90, 84, 84));
+	npc_animated_sprite.addFrame(sf::IntRect(3, 194, 84, 40));
+	npc_animated_sprite.addFrame(sf::IntRect(3, 259, 84, 80));
+	npc_animated_sprite.addFrame(sf::IntRect(3, 343, 1, 84));
+
 
 	// Setup Players Default Animated Sprite
 	AnimatedSprite player_animated_sprite(player_texture);
 	player_animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
-	player_animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
-	player_animated_sprite.addFrame(sf::IntRect(173, 3, 84, 84));
-	player_animated_sprite.addFrame(sf::IntRect(258, 3, 84, 84));
-	/*player_animated_sprite.addFrame(sf::IntRect(343, 3, 84, 84));
-	player_animated_sprite.addFrame(sf::IntRect(428, 3, 84, 84));*/
+	player_animated_sprite.addFrame(sf::IntRect(3, 90, 84, 84));
+	player_animated_sprite.addFrame(sf::IntRect(3, 343, 1, 84));
 
 	// Setup the NPC
 	GameObject &npc = NPC(npc_animated_sprite);
@@ -71,6 +68,10 @@ int main()
 	c2Circle circle_player;
 	circle_player.p = c2V(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
 	circle_player.r = player.getAnimatedSprite().getGlobalBounds().width / 2;
+
+	c2Circle circle_npc;
+	circle_npc.p = c2V(npc.getAnimatedSprite().getPosition().x, npc.getAnimatedSprite().getPosition().y);
+	circle_npc.r = npc.getAnimatedSprite().getGlobalBounds().width / 2;
 
 	// Initialize Input
 	Input input;
@@ -134,6 +135,12 @@ int main()
 			player.getAnimatedSprite().getGlobalBounds().height
 		);
 
+		circle_npc.p = c2V(npc.getAnimatedSprite().getPosition().x, npc.getAnimatedSprite().getPosition().y);
+		circle_npc.r = npc.getAnimatedSprite().getGlobalBounds().width / 2;
+
+		circle_player.p = c2V(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
+		circle_player.r = player.getAnimatedSprite().getGlobalBounds().width / 2;
+
 		// Process events
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -163,23 +170,22 @@ int main()
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
 				{
-					input.setNCurrent(Input::NPCInput::N_CIRCLE);
+					input.setNCurrent(Input::NPCInput::N_CAPSULE);
 				}
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))
 				{
 					input.setNCurrent(Input::NPCInput::N_RAY);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))
 				{
 					input.setNCurrent(Input::NPCInput::N_POLYGON);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))
 				{
-					input.setNCurrent(Input::NPCInput::N_AABB);
+					input.setNCurrent(Input::NPCInput::N_CIRCLE);
 				}
 				break;
 			default:
-				input.setPCurrent(Input::PlayerInput::P_AABB);
 				break;
 			}
 		}
@@ -194,7 +200,7 @@ int main()
 		// Update the Player
 		npc.update();
 
-		// Check for collisions
+		// Check for collision
 		result = c2AABBtoAABB(aabb_player, aabb_npc);
 		cout << ((result != 0) ? ("Collision") : "") << endl;
 		if (result){

@@ -23,8 +23,7 @@ Player::~Player()
 
 AnimatedSprite& Player::getAnimatedSprite()
 {
-	int frame = m_animated_sprite.getCurrentFrame();
-	m_animated_sprite.setTextureRect(m_animated_sprite.getFrame(frame));
+	m_animated_sprite.setTextureRect(m_animated_sprite.getFrame(m_currentRow));
 	return m_animated_sprite;
 }
 
@@ -37,14 +36,17 @@ void Player::handleInput(Input in)
 	case Input::PlayerInput::P_AABB:
 		//std::cout << "Player Idling" << std::endl;
 		m_player_fsm.AABBPlayer();
+		m_currentRow = 0;
 		break;
 	case Input::PlayerInput::P_CIRCLE:
 		//std::cout << "Player Up" << std::endl;
 		m_player_fsm.CirclePlayer();
+		m_currentRow = 1;
 		break;
 	case Input::PlayerInput::P_RAY:
 		//std::cout << "Player Left" << std::endl;
 		m_player_fsm.RayPlayer();
+		m_currentRow = 2;
 		break;
 	default:
 		break;

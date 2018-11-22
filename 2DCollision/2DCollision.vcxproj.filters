@@ -34,17 +34,17 @@
     <Filter Include="Header Files\GameObject">
       <UniqueIdentifier>{3e1e6b65-d949-4485-9cbf-eabcfaac4c02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Debug">
-      <UniqueIdentifier>{b1b83ed1-5219-4fdf-bcae-f149f0a79bc6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Readme">
       <UniqueIdentifier>{1bc46bdb-7446-4df6-9ccb-727da7603796}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Collision">
       <UniqueIdentifier>{c8ab608c-0471-44ea-baa7-5f46d9db0a7c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GameObject\Input">
+    <Filter Include="Source Files\Input">
       <UniqueIdentifier>{48e64629-dccb-464a-9094-bbe70e4d02c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Debug">
+      <UniqueIdentifier>{b1b83ed1-5219-4fdf-bcae-f149f0a79bc6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +99,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
-      <Filter>Source Files\GameObject\Input</Filter>
+      <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="AnimatedSprite.cpp">
       <Filter>Source Files\Animation</Filter>

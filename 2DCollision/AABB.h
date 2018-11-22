@@ -17,7 +17,7 @@ public:
 
 	void aabbPlayer(PlayerFSM* a)
 	{
-		DEBUG_MSG("Player is an AABB");
+		DEBUG_MSG("Player is an AABB");		
 	}
 	void circlePlayer(PlayerFSM* a)
 	{
@@ -51,11 +51,6 @@ public:
 
 private:
 
-	sf::RectangleShape m_AABB;
-	sf::CircleShape m_Circle;
-	sf::VertexArray m_Ray;
-	sf::Vertex m_RayStart;
-	sf::Vertex m_RayEnd;
 };
 
 #endif // !AABB_H

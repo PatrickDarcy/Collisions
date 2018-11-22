@@ -25,8 +25,7 @@ NPC::~NPC()
 
 AnimatedSprite& NPC::getAnimatedSprite()
 {
-	int frame = m_animated_sprite.getCurrentFrame();
-	m_animated_sprite.setTextureRect(m_animated_sprite.getFrame(frame));
+	m_animated_sprite.setTextureRect(m_animated_sprite.getFrame(m_currentRow));
 	return m_animated_sprite;
 }
 
@@ -39,22 +38,27 @@ void NPC::handleInput(Input in)
 	case Input::NPCInput::N_AABB:
 		//std::cout << "NPC is a Square" << std::endl;
 		m_npc_fsm.AABBNPC();
+		m_currentRow = 0;
 		break;
 	case Input::NPCInput::N_CAPSULE:
 		//std::cout << "NPC is a Capsule" << std::endl;
 		m_npc_fsm.CapsuleNPC();
+		m_currentRow = 1;
 		break;
 	case Input::NPCInput::N_CIRCLE:
 		//std::cout << "NPC is a circle" << std::endl;
 		m_npc_fsm.CircleNPC();
+		m_currentRow = 2;
 		break;
 	case Input::NPCInput::N_POLYGON:
 		//std::cout << "NPC is a Polygon" << std::endl;
 		m_npc_fsm.PolygonNPC();
+		m_currentRow = 3;
 		break;
 	case Input::NPCInput::N_RAY:
 		//std::cout << "NPC is a ray" << std::endl;
 		m_npc_fsm.RayNPC();
+		m_currentRow = 4;
 		break;
 	default:
 		break;

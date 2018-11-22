@@ -30,7 +30,6 @@ State * NPCFSM::getPrevious()
 
 void NPCFSM::AABBNPC()
 {
-	m_currentNPC->circlePlayer(this);
 }
 
 void NPCFSM::CircleNPC()

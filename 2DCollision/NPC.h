@@ -16,6 +16,9 @@ public:
 	AnimatedSprite& getAnimatedSprite();
 	void handleInput(Input);
 	void update();
+
+private:
+	int m_currentRow = 0;
 };
 
 #endif // !NPC_H
